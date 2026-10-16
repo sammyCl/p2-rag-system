@@ -33,7 +33,7 @@ instruction = "Represent this sentence for searching relevant passages: "
 [hybrid]
 # The two systems p2/retrievers/hybrid.py fuses by reciprocal rank fusion, and the k in 1 / (k + rank).
 systems = ["bm25", "dense"]
-rrf_k = 20
+rrf_k = 60
 
 [rerank]
 # The first-stage system p2/retrievers/rerank.py takes its candidates from, and how many Claude reorders.
