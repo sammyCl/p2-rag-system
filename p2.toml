@@ -30,6 +30,11 @@ b = 0.4
 model = "BAAI/bge-small-en-v1.5"
 instruction = "Represent this sentence for searching relevant passages: "
 
+[hybrid]
+# The two systems p2/retrievers/hybrid.py fuses by reciprocal rank fusion, and the k in 1 / (k + rank).
+systems = ["bm25", "dense"]
+rrf_k = 20
+
 [answer]
 # How many chunks `p2 answer` sends to Claude with each question.
 top = 5
