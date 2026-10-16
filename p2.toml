@@ -35,6 +35,11 @@ instruction = "Represent this sentence for searching relevant passages: "
 systems = ["bm25", "dense"]
 rrf_k = 20
 
+[rerank]
+# The first-stage system p2/retrievers/rerank.py takes its candidates from, and how many Claude reorders.
+first = "hybrid"
+candidates = 20
+
 [answer]
 # How many chunks `p2 answer` sends to Claude with each question.
 top = 5
