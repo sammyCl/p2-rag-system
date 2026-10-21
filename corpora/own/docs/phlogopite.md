@@ -1,0 +1,24 @@
+# Phlogopite
+
+Phlogopite is a yellow, greenish, or reddish-brown member of the mica family of phyllosilicates. It is also known as magnesium mica.
+Phlogopite is the magnesium endmember of the biotite solid solution series, with the chemical formula KMg3AlSi3O10(F,OH)2. Iron substitutes for magnesium in variable amounts leading to the more common biotite with higher iron content. For physical and optical identification, it has most of the characteristic properties of biotite.
+
+Paragenesis
+Phlogopite is an important and relatively common end-member composition of biotite. Phlogopite micas are found primarily in igneous rocks, although it is also common in contact metamorphic aureoles of intrusive igneous rocks with magnesian country rocks and in marble formed from impure dolomite (dolomite with some siliclastic sediment).
+The occurrence of phlogopite mica within igneous rocks is difficult to constrain precisely because the primary control is rock composition as expected, but phlogopite is also controlled by conditions of crystallisation such as temperature, pressure, and vapor content of the igneous rock. Several igneous associations are noted: high-alumina basalts, ultrapotassic igneous rocks, and ultramafic rocks.
+
+Basaltic association
+The basaltic occurrence of phlogopite is in association with picrite basalts and high-alumina basalts. Phlogopite is stable in basaltic compositions at high pressures and is often present as partially resorbed phenocrysts or an accessory phase in basalts generated at depth.
+
+Ultrapotassic association
+Phlogopite mica is a commonly known phenocryst and groundmass phase within ultrapotassic igneous rocks such as lamprophyre, kimberlite, lamproite, and other deeply sourced ultramafic or high-magnesian melts. In this association phlogopite can form well preserved megacrystic plates to 10 cm, and is present as the primary groundmass mineral, or in association with pargasite amphibole, olivine, and pyroxene. Phlogopite in this association is a primary igneous mineral present because of the depth of melting and high vapor pressures.
+
+Ultramafic rocks
+Phlogopite is often found in association with ultramafic intrusions as a secondary alteration phase within metasomatic margins of large layered intrusions. In some cases the phlogopite is considered to be produced by autogenic alteration during cooling. In other instances, metasomatism has resulted in phlogopite formation within large volumes, as in the ultramafic massif at Finero, Italy, within the Ivrea zone. Trace phlogopite, again considered the result of metasomatism, is common within coarse-grained peridotite xenoliths carried up by kimberlite, and so phlogopite appears to be a common trace mineral in the uppermost part of the Earth's mantle. Phlogopite is encountered as a primary igneous phenocryst within lamproites and lamprophyres, the result of highly fluid-rich melt compositions within the deep mantle.
+
+Uses
+
+As the general thermal, electrical and mechanical properties of phlogopite are those of the mica family, the main uses of phlogopite are similar to these of muscovite.
+
+Miscellaneous
+The largest documented single crystal of phlogopite was found in Lacey mine, Ontario, Canada; it measured 10 m × 4.3 m × 4.3 m and weighed about 330 tonnes. Similar-sized crystals were also found in Karelia, Russia.

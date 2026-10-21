@@ -1,0 +1,8 @@
+# Zoisite
+
+Zoisite, first known as saualpite, after its type locality, is a calcium aluminum hydroxy sorosilicate. Its chemical formula is Ca2Al3(SiO4)(Si2O7)O(OH). It was formerly considered a member of the epidote group.
+Zoisite occurs as prismatic, orthorhombic (2/m 2/m 2/m) crystals or in massive form, being found in metamorphic and pegmatitic rock. Zoisite may be blue to violet, green, brown, pink, yellow, gray, or colorless. Blue crystals are known under the name tanzanite. It has a vitreous luster and a conchoidal to uneven fracture. When euhedral, zoisite crystals are striated parallel to the principal axis (c-axis). Also parallel to the principal axis is one direction of perfect cleavage. The mineral is between 6 and 7 on the Mohs hardness scale, and its specific gravity ranges from 3.10 to 3.38, depending on the variety. It streaks white and is said to be brittle. Clinozoisite is a more common monoclinic polymorph of Ca2Al3(SiO4)(Si2O7)O(OH).
+Transparent material is fashioned into gemstones while translucent-to-opaque material is usually carved.
+The mineral was described by Abraham Gottlob Werner in 1805. He named it after the Carniolan naturalist Sigmund Zois, who sent him its specimens from Saualpe in Carinthia. Zois realized that this was an unknown mineral when it was brought to him by a mineral dealer, presumed to be Simon Prešern, in 1797.
+Sources of zoisite include Tanzania (tanzanite), Kenya (anyolite), Norway (thulite), Switzerland, Austria, India, Pakistan, and the U.S. state of Washington.
+More recently, the thulite variety has been found in Canada, in the Jeffrey Mine (Val-des-sources, QC) and in British Columbia.

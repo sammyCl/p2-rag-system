@@ -1,0 +1,27 @@
+# Chlorite group
+
+The chlorites are the group of phyllosilicate minerals common in low-grade metamorphic rocks and in altered igneous rocks.
+Chlorite minerals do not contain the element chlorine. The name chlorite is from the Greek chloros (χλωρός), meaning "green", in reference to its color. Greenschist, formed by metamorphism of basalt or other low-silica volcanic rock, typically contains significant amounts of chlorite mineral (but not the chlorite ion, nor chlorine in any other form).
+Chlorite minerals show a wide variety of compositions, in which magnesium, iron, aluminium, and silicon substitute for each other in the crystal structure. A complete solid solution series exists between the two most common end members, magnesium-rich clinochlore and iron-rich chamosite. In addition, manganese, zinc, lithium, and calcium species are known. The great range in composition results in considerable variation in physical, optical, and X-ray properties. Similarly, the range of chemical composition allows chlorite group minerals to exist over a wide range of temperature and pressure conditions. For this reason chlorite minerals are ubiquitous minerals within low and medium temperature metamorphic rocks, some igneous rocks, hydrothermal rocks and deeply buried sediments.
+
+Properties
+Chlorite forms blue-green crystals resembling mica. However, while the plates are flexible, they are not elastic like mica, and are less easily pulled apart. Talc is much softer and feels soapy between the fingers.
+The typical general formula for chlorite is (Mg,Fe)3(Si,Al)4O10(OH)2·(Mg,Fe)3(OH)6. This formula emphasizes the structure of the group, which is described as TOT-O and consists of alternating TOT layers and O layers. The TOT layer (Tetrahedral-Octahedral-Tetrahedral = T-O-T) is often referred to as a talc layer, since talc is composed entirely of stacked TOT layers. The TOT layers of talc are electrically neutral and are bound only by relatively weak van der Waals forces. By contrast, the TOT layers of chlorite contain some aluminium in place of silicon, which gives the layers an overall negative charge. These TOT layers are bound together by positively charged O layers, sometimes called brucite layers. Mica is also composed of aluminium-rich, negatively charged TOT layers, but these are bonded together by individual cations (such as potassium, sodium, or calcium ions) rather than a positively charged brucite layer.
+
+Chlorite is considered a clay mineral. It is a nonswelling clay mineral, since water is not adsorbed in the interlayer spaces, and it has a relatively low cation exchange capacity.
+
+Occurrence
+
+Chlorite is a common mineral, found in metamorphic, igneous, and sedimentary rocks. It is an important rock-forming mineral in low- to medium-grade metamorphic rock formed by metamorphism of mafic or pelitic rock. It is also common in igneous rocks, usually as a secondary mineral, formed by alteration of mafic minerals such as biotite, hornblende, pyroxene, or garnet. The glassy rims of pillow basalt on the ocean floor is often altered to pure chlorite, in part by exchange of chemicals with seawater. The green color of many igneous rocks, slates, and schists is due to fine particles of chlorite disseminated throughout the rock. Chlorite is a common weathering product and is widespread in clay and in sedimentary rock containing clay minerals. Chlorite is found in pelites along with quartz, albite, sericite, and garnet, and is also found in associate with actinolite and epidote.
+In his pioneering work on metamorphic facies in the Scottish Highlands, G.M. Barrow identified the chlorite zone as the zone of mildest metamorphism. In modern petrology, chlorite is the diagnostic mineral of the greenschist facies. This facies is characterized by temperatures near 450 °C (840 °F) and pressures near 5 kbar. At higher temperatures, much of the chlorite is destroyed by reactions with either potassium feldspar or phengite mica which produce biotite, muscovite, and quartz. At still higher temperatures, other reactions destroy the remaining chlorite, often with release of water vapor.
+Chlorite is one of the most common minerals produced by propylitic alteration by hydrothermal systems, where it occurs in the "green rock" environment with epidote, actinolite, albite, hematite, and calcite.
+
+Experiments indicate that chlorite can be stable in peridotite of the Earth's mantle above the ocean lithosphere carried down by subduction, and chlorite may even be present in the mantle volume from which island arc magmas are generated.
+
+Members of the chlorite group
+
+Clinochlore, pennantite, and chamosite are the most common varieties. Several other sub-varieties have been described. A massive compact variety of clinochlore used as a decorative carving stone is referred to by the trade name seraphinite. It occurs in the Korshunovskoye iron skarn deposit in the Irkutsk Oblast of Eastern Siberia.
+
+Uses
+Chlorite does not have any specific industrial uses of any importance. Some rock types containing chlorite, such as chlorite schist, have minor decorative uses or as construction stone. However, chlorite is a common mineral in clay, which has a vast number of uses.
+Chlorite schist has been used as roofing granules, the mineral granules adhered to asphalt composition shingles due to the green color. It was quarried near Ely, Minnesota, US, until superseded by synthetic materials.

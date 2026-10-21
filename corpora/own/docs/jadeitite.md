@@ -1,0 +1,4 @@
+# Jadeitite
+
+Jadeitite is a metamorphic rock found in blueschist-grade metamorphic terranes. It is found in isolated metasomatically altered rock units within serpentinite associated with subduction zone environments. Jadeitite consists almost entirely of the pyroxene mineral jadeite and is typically mined as a source of the ornamental rock or gemstone, jade. Occurrences include Myanmar, Guatemala, Japan, Kazakhstan and in the Coast Ranges of western North America.
+Over 100 axe heads made from jadeitite quarried in northern Italy in the Neolithic era have been found across the British Isles. Because of the difficulty of working this material, all the axe heads of this type found are thought to have been non-utilitarian and to have represented some form of currency or be the products of gift exchange.

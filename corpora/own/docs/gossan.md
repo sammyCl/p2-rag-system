@@ -1,0 +1,7 @@
+# Gossan
+
+Gossan (eiserner hut or eisenhut) is intensely oxidized, weathered or decomposed rock, usually the upper and exposed part of an ore deposit or mineral vein. Typically, in gossan or iron cap all that remains is iron oxides and quartz, often in the form of boxworks (which are quartz-lined cavities retaining the shape of the dissolved ore minerals). In other cases, quartz and iron oxides, limonite, goethite, and jarosite, exist as pseudomorphs, replacing the pyrite and primary ore minerals. Frequently, gossan appears as a red "stain" against the background rock and soil, due to the abundance of oxidized iron; the gossan may be a topographic positive area due to the abundance of erosion-resistant quartz and iron oxides. Although most gossans are red, orange, or yellow, black gossans from manganese oxides such as pyrolusite, manganite, and especially psilomelane form at the oxidized portion of manganese-rich mineral deposits.
+In the 19th and 20th centuries, gossans were important guides to buried ore deposits used by prospectors in their quest for metal ores. An experienced prospector could read the clues in the structure of the gossans to determine the type of mineralization likely to be found below the iron cap.
+
+Name
+The name gossan appears to come from Cornish miner's slang. The terms "iron cap" and "iron hat", common in America, are direct translations from the German "Eiserner Hut" or "Eisenhut", which term was also used in America.

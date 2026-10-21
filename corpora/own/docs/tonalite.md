@@ -1,0 +1,7 @@
+# Tonalite
+
+Tonalite is an igneous, plutonic (intrusive) rock, of felsic composition, with phaneritic (coarse-grained) texture. Feldspar is present as plagioclase (typically oligoclase or andesine) with alkali feldspar making up less than 10% of the total feldspar content. Quartz (SiO2) is present as more than 20% of the total quartz-alkali feldspar-plagioclase-feldspathoid (QAPF) content of the rock. Amphiboles and biotite are common in lesser quantities, while accessory minerals include apatite, magnetite and zircon.
+In older references tonalite is sometimes used as a synonym for quartz diorite. However the current IUGS classification defines tonalite as having greater than 20% quartz, while quartz diorite varies its quartz content from 5 to 20%.
+The name is derived from the type locality of tonalites, adjacent to the Tonale Line, a major structural lineament and mountain pass, Tonale Pass, in the Italian alps. The name was first applied by Gerhard vom Rath in 1864. The term adamellite was originally applied by A. Cathrein in 1890 to orthoclase-bearing tonalite (likely a granodiorite) at Monte Adamello, Italy, in 1890, but later came to refer to quartz monzonite, and is now a deprecated term.
+Trondhjemite is an orthoclase-deficient variety of sodium-rich tonalite with minor biotite as the only mafic mineral, named after Norway's third largest city, Trondheim.
+Tonalites, together with granodiorites, are characteristic of calc-alkaline batholiths formed above subduction zones.

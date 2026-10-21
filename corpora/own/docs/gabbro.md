@@ -1,0 +1,54 @@
+# Gabbro
+
+Gabbro ( GAB-roh) is a phaneritic (coarse-grained), mafic (magnesium- and iron-rich), intrusive igneous rock formed from the slow cooling magma into a holocrystalline mass deep beneath the Earth's surface. Slow-cooling, coarse-grained gabbro has the same chemical composition and mineralogy as rapid-cooling, fine-grained basalt. Much of the Earth's oceanic crust is made of gabbro, formed at mid-ocean ridges. Gabbro is also found as plutons associated with continental volcanism. Due to its variant nature, the term gabbro may be applied loosely to a wide range of intrusive rocks, many of which are merely "gabbroic". It is often called "black granite" commercially, just as other intrusive rocks are called "granite" in the dimension stone industry. By rough analogy, gabbro is to basalt as granite is to rhyolite.
+
+Etymology
+The term "gabbro" was used in the 1760s to name a set of rock types that were found in the ophiolites of the Apennine Mountains in Italy. It was named after Gabbro, a hamlet near Rosignano Marittimo in Tuscany. Then, in 1809, the German geologist Christian Leopold von Buch used the term more restrictively in his description of these Italian ophiolitic rocks. He assigned the name "gabbro" to rocks that geologists nowadays would more strictly call "metagabbro" (metamorphosed gabbro).
+
+Petrology
+
+Gabbro is a coarse-grained (phaneritic) igneous rock that is relatively low in silica and rich in iron, magnesium, and calcium. Such rock is described as mafic. Gabbro is composed of pyroxene (mostly clinopyroxene) and calcium-rich plagioclase, with minor amounts of hornblende, olivine, orthopyroxene and accessory minerals. With significant (>10%) olivine or orthopyroxene it is classified as olivine gabbro or gabbronorite respectively. Where present, hornblende is typically found as a rim around augite crystals or as large grains enclosing smaller grains of other minerals (poikilitic grains).
+
+Geologists use rigorous quantitative definitions to classify coarse-grained igneous rocks, based on the mineral content of the rock. For igneous rocks composed mostly of silicate minerals, and in which at least 10% of the mineral content consists of quartz, feldspar, or feldspathoid minerals, classification begins with the QAPF diagram. The relative abundances of quartz (Q), alkali feldspar (A), plagioclase (P), and feldspathoid (F), are used to plot the position of the rock on the diagram. The rock will be classified as either a gabbroid or a dioritoid if quartz makes up less than 20% of the QAPF content, feldspathoid minerals make up less than 10% of the QAPF content, and plagioclase makes up more than 65% of the total feldspar content. Gabbroids are distinguished from dioritoids by an anorthite (calcium plagioclase) fraction of their total plagioclase of greater than 50%.
+The composition of the plagioclase cannot easily be determined in the field, and then a preliminary distinction is made between dioritoid and gabbroid based on the content of mafic minerals. A gabbroid typically has over 35% mafic minerals, mostly pyroxenes or olivine, while a dioritoid typically has less than 35% mafic minerals, which typically includes hornblende.
+Gabbroids form a family of rock types similar to gabbro, such as monzogabbro, quartz gabbro, or nepheline-bearing gabbro. Gabbro itself is more narrowly defined, as a gabbroid in which quartz makes up less than 5% of the QAPF content, feldspathoids are not present, and plagioclase makes up more than 90% of the feldspar content. Gabbro is distinct from anorthosite, which contains less than 10% mafic minerals.
+Coarse-grained gabbroids are produced by slow crystallization of magma having the same composition as the lava that solidifies rapidly to form fine-grained (aphanitic) basalt.
+
+Subtypes
+There are a number of subtypes of gabbro recognized by geologists. Gabbros can be broadly divided into leucogabbros, with less than 35% mafic mineral content; mesogabbros, with 35% to 65% mafic mineral content; and melagabbros with more than 65% mafic mineral content. A rock with over 90% mafic mineral content will be classified instead as an ultramafic rock. A gabbroic rock with less than 10% mafic mineral content will be classified as an anorthosite.
+A more detailed classification is based on the relative percentages of plagioclase, pyroxene, hornblende, and olivine. The end members are:
+
+Normal gabbro (gabbro sensu stricto) is composed almost entirely of plagioclase and clinopyroxene (typically augite), with less than 5% each of hornblende, olivine, or orthopyroxene.
+Norite is composed almost entirely of plagioclase and orthopyroxene, with less than 5% each of hornblende, clinopyroxene, or olivine.
+Troctolite is composed almost entirely of plagioclase and olivine, with less than 5% each of pyroxene or hornblende.
+Hornblende gabbro is composed almost entirely of plagioclase and hornblende, with less than 5% each of pyroxene or olivine.
+Gabbros intermediate between these compositions are given names such as gabbronorite (for a gabbro intermediate between normal gabbro and norite, with almost equal amounts of clinopyroxene and orthopyroxene) or olivine gabbro (for a gabbro containing significant olivine, but almost no clinopyroxene or hornblende). A rock similar to normal gabbro but containing more orthopyroxene is called an orthopyroxene gabbro, while a rock similar to norite but containing more clinopyroxene is called a clinopyroxene norite.
+
+Gabbros are also sometimes classified as alkali or tholleiitic gabbros, by analogy with alkali or tholeiitic basalts, of which they are considered the intrusive equivalents. Alkali gabbro usually contains olivine, nepheline, or analcime, up to 10% of the mineral content, while tholeiitic gabbro contains both clinopyroxene and orthopyroxene, making it a gabbronorite.
+
+Gabbroids
+Gabbroids (also known as gabbroic rocks) are a family of coarse-grained igneous rocks similar to gabbro:
+
+Quartz gabbro contains 5% to 20% quartz in its QAPF fraction. One example is the cizlakite at Pohorje in northeastern Slovenia.
+Monzogabbro contains 65% to 90% plagioclase out of its total feldspar content.
+Quartz monzogabbro combines the features of quartz gabbro and monzogabbro. It contains 5% to 20% quartz in its QAPF fraction, and 65% to 90% of its feldspar is plagioclase.
+Foid-bearing gabbro contains up to 10% feldspathoids rather than quartz. "Foid" in the name is usually replaced by the specific feldspathoid that is most abundant in the rock. For example, a nepheline-bearing gabbro is a foid-bearing gabbro in which the most abundant feldspathoid is nepheline.
+Foid-bearing monzogabbro resembles monzogabbro, but containing up to 10% feldspathoids in place of quartz. The same naming conventions apply as for foid-bearing gabbro, so that a gabbroid might be classified as a leucite-bearing monzogabbro.
+Gabbroids contain minor amounts, typically a few percent, of iron-titanium oxides such as magnetite, ilmenite, and ulvospinel. Apatite, zircon, and biotite may also be present as accessory minerals.
+Gabbro is generally coarse-grained, with crystals in the size range of 1 mm or larger. Finer-grained equivalents of gabbro are called diabase (also known as dolerite), although the term microgabbro is often used when extra descriptiveness is desired. Gabbro may be extremely coarse-grained to pegmatitic. Some pyroxene-plagioclase cumulates are essentially coarse-grained gabbro, and may exhibit acicular crystal habits.
+Gabbro is usually equigranular in texture, although it may also show ophitic texture (with laths of plagioclase enclosed in pyroxene).
+
+Distribution
+
+Nearly all gabbros are found in plutonic bodies, and the term (as the International Union of Geological Sciences recommends) is normally restricted just to plutonic rocks, although gabbro may be found as a coarse-grained interior facies of certain thick lavas. Gabbro can be formed as a massive, uniform intrusion via in-situ crystallisation of pyroxene and plagioclase, or as part of a layered intrusion as a cumulate formed by settling of pyroxene and plagioclase.
+An alternative name for gabbros formed by crystal settling is pyroxene-plagioclase adcumulate.
+Gabbro is much less common than more silica-rich intrusive rocks in the continental crust of the Earth. Gabbro and gabbroids occur in some batholiths but these rocks are relatively minor components of these very large intrusions because their iron and calcium content usually makes gabbro and gabbroid magmas too dense to have the necessary buoyancy. However, gabbro is an essential part of the oceanic crust, and can be found in many ophiolite complexes as layered gabbro underlying sheeted dike complexes and overlying ultramafic rock derived from the Earth's mantle. These layered gabbros may have formed from relatively small but long-lived magma chambers underlying mid-ocean ridges.
+Layered gabbros are also characteristic of lopoliths, which are large, saucer-shaped intrusions that are primarily Precambrian in age. Prominent examples of lopoliths include the Bushveld Complex of South Africa, the Muskox intrusion of the Northwest Territories of Canada, the Rum layered intrusion of Scotland, the Stillwater complex of Montana, and the layered gabbros near Stavanger, Norway. Gabbros are also present in stocks associated with alkaline volcanism of continental rifting.
+
+Uses
+Gabbro often contains valuable amounts of chromium, nickel, cobalt, gold, silver, platinum, and copper sulfides. For example, the Merensky Reef is the world's most important source of platinum.
+Gabbro is known in the construction industry by the trade name of black granite. However, gabbro is hard and difficult to work, which limits its use.
+The term "indigo gabbro" is used as a common name for a mineralogically complex rock type often found in mottled tones of black and lilac-grey. It is mined in central Madagascar for use as a semi-precious stone. Indigo Gabbro can contain numerous minerals, including quartz and feldspar. Reports state that the dark matrix of the rock is composed of a mafic igneous rock, but whether this is basalt or gabbro is unclear.
+
+Associated soils
+The plagioclase and mafic minerals of gabbro weather more readily than the potassium feldspar, muscovite mica and free quartz common to granitic rock. Shrink-swell clay is a common weathering product of gabbro. Unfavourably high magnesium-to-calcium ratio, excessive amounts of toxic metals (iron, nickel, chromium, cobalt) and lack of nitrogen, phosphorus and potassium are other factors which reduce the desirability of gabbro soils for gardening in the Sierra Nevada foothills of California. In the southeastern United States Piedmont, soils on gabbro and other mafic rock have been seen as productive, although the stickiness inherent to their clay gives rise to the terms "gummy land" or "push land".
