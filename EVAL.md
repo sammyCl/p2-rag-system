@@ -25,7 +25,11 @@ The minimum detectable difference is the smallest gap this many queries could re
 
 For each of `dense`, `hybrid` and `rerank`, one or two sentences: the embedding model, how documents were chunked, what was fused and how, how many candidates the reranker saw, and anything you changed from the 12 and 13 lab code.
 
-TODO: describe your three systems.
+Dense: For the dense model, I chose to use the bge embedding model. I made this decision because I wanted to have a contextual model, because as seen in Lab 12, those tend to perform better. The main downside to this choice is that bge is more costly than potion, and can take more time. The dense model chunks 300 words together, with neighboring chunks sharing 50 words. 
+
+Hybrid: For the hybrid model, I chose to use reciprocal rank fusion on the dense and bm25 models, as that fusion scored best during my Lab 13 experimentation. I tried to perform some hyperparameter tuning for my hybrid model by experimenting with different k values, however when I tried committing a k value of 20 to my Git, the CI check failed. As a result, I reverted back to k=60.
+
+Rerank: The reranker saw the hybrid's top 20 different candidates and utilized the Sonnet model.
 
 ### Practice queries (20)
 
@@ -97,7 +101,13 @@ Which differences are distinguishable from zero and which are not?
 What is the minimum detectable difference at 20 queries, and what does that say about any gap smaller than it?
 Which claim from lecture 12 or 13 did your numbers support, and which did they leave open?
 
-TODO: write what the practice-query intervals let you claim.
+The differences that are distinguishable from 0 occur when the rerank values are higher. This occurs when we do rerank minus bm25 for MRR@10 and nDCG@10, rerank minus dense for MRR@10 and nDCG@10, and all values for rerank minus hybrid. Everything else is considered to not be distinguishable.
+
+The minimal detectable difference at 20 queries is between 0.143 (rerank minus hybrid recall@10) and 0.415 (dense minus bm25 recall@10). The minimal detectable difference says that for any gap smaller than that value, we would not be able to reliably detect it. 
+
+Lecture 12 argued that no search method is the best at every type of question. This claim is supported by the scores per query class, which shows that bm25 performed the best for identifier questions and dense performed the best for paraphrased questions. However, their scores for the others were very lacking.
+
+Lecture 13 argued that using an LLM as a reranker can significantly improve the ranking. This is reflected in some of our data tables, which demonstrate the reranker clearly performing better than any other model for MRR@10 and nDCG@10. Lecture 13 also argued that fusion helps when one partner is weak but can hurt when a partner is already strong. However, our MDD numbers show indistinguishable differences at this time.
 
 ---
 
@@ -116,8 +126,31 @@ Then read three in-corpus answers that `uv run p2 verify` passed.
 For each one, open the cited chunk and say whether the quote really supports the claim next to it.
 The check proves a quote is a real piece of the chunk and cannot prove that it supports the claim, so this reading is the part only you can do.
 
-TODO: write your answer choices and your three-answer audit.
+I used rerank to answer the 12 questions because it had the best overall performance, which can be seen in most instances in the scores per system, scores per class, and the comparison table, for the MRR@10 and nDCG@10 metrics.
 
+I did not change prompts/answer.txt.
+
+Cited answers audit:
+```
+a02: Makes 2 claims. 
+    Claim 1: Supported, almost exact quote.
+    Claim 2: Supported, reworded quote.
+Overall Citation: Logical match, the text specifically focuses on the incombustible content of rock dust. However, the quote that says the incombustible content of the combined dust must not be less than 80% does not explicitly state this is for an area with no methane. This can be assumed because the following sentence does say that values change if methane is present.
+Verdict: Matches
+
+a04: Makes 2 claims.
+    Claim 1: Supported, reworded quote. 
+    Claim 2: Supported, reworded quote.
+Overall Citation: Logical match, the text explicitly covers when the underground evacuation drills shall occur and how they will be held. However, it does not directly state whether this is for metal, nonmetal, or both types of mines.
+Verdict: Assumption made, but seems to match.
+
+a07: Makes 3 claims.
+    Claim 1: Supported, direct quote.
+    Claim 2: Supported, direct quote.
+    Claim 3: Supported, some wording left out of claim.
+Overall Citations: Logical match, the text explicitly covers when berms are required and what their setup should be. However, it does not directly state whether this is for metal, nonmetal, or both types of mines.
+Verdict: Assumption made, but seems to match.
+```
 ---
 
 ## 3. Stage 2 - your corpus and your gold set
