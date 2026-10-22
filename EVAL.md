@@ -161,7 +161,9 @@ What is it, where did it come from, how many documents and how many megabytes, a
 Name the one or two documents you were least sure about and what you decided.
 Say which of the allowed sources in the brief it comes from.
 
-TODO: describe your corpus and its license basis.
+My corpus is 260 Wikipedia articles about rocks (155 rock types) and minerals (105 minerals). Each rock/mineral has its own document, with the references section removed. It is around 2.0MB on disk. As my documents are from Wikipedia, they are covered under the cc-by-sa-4.0 license.
+
+There were a couple documents that I did not end up keeping because they were not long enough. I set a 100 word cutoff for my documents, so a couple ended up getting dropped. This makes it so I am a little less confident in the documents I decided to keep with only 100 words, such as comendite.
 
 ### The gold set
 
@@ -170,7 +172,11 @@ How did you decide that a document is relevant: write your relevance rule in two
 How did you find candidates (the systems' top 10, a keyword search, reading), and did you read every document before you labeled it?
 Your labels are binary (`rel` 1) unless you say otherwise: if you use graded labels, declare the scale here, for example 2 means the document answers the query fully and 1 means it helps.
 
-TODO: describe your gold set and your relevance rule.
+I have a total of 32 queries, with 12 hand written and 20 written by Claude. I used the identifier (7), paraphrase (13), and mixed (12) classes to have questions so each method could excel at one (bm25->identifier, dense->paraphrase, etc).
+
+A document will be considered relevant if it has a clear answer to the query. This means that the document must be about the query's subject, or have direct quotes that answer the query. It must either have a clear definition of a term (identifier), a clear connection to the query (not a brief cross-reference) (paraphrase/mixed), or must have a quote that can be used to/reworded to answer the question (paraphrase/mixed). If multiple documents fit this requirement, all documents are considered to be relevant. If the document simply cross-references or tangentially covers a topic, it will not be considered relevant.
+
+To find candidates, I had Claude pool the articles for each query. It ran bm25 (top 10 articles), dense (top 10 articles), and hybrid (top 20 articles to match rerank) on my queries. Claude also performed a keyword search over the corpus. I then either evaluated the title of each article to be irrelevant, or read each article and decided whether or not it was relevant for the query. I also performed a consistency pass with Claude's help, where I had it look over what I marked to be relevant and then see if my reasoning was consistent. I then did my own verification to make sure everything still aligned.
 
 ---
 

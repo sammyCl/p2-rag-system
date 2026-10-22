@@ -16,14 +16,14 @@ o10	mixed	How long have mudrocks been used in pottery?	hand
 o11	mixed	Is zircon used in jewelry?	hand
 o12	identifier	What is FeS2?	hand
 o13	paraphrase	What dark volcanic glass did ancient people use to make surgical blades?	claude
-o14	paraphrase	What kind of stone do people use to sharpen knives?	claude
+o14	paraphrase	What coarse sandstone was used for grindstones?	claude
 o15	paraphrase	Which soft rock is easy to carve into bowls and figures?	claude
 o16	paraphrase	Which rock should a prospector look for to find diamonds?	claude
 o17	paraphrase	Which blue stone did painters grind up to make an expensive paint?	claude
 o18	paraphrase	What rock builds up around hot springs?	claude
 o19	paraphrase	What crumbly white rock is made of the fossil shells of tiny algae?	claude
-o20	paraphrase	Which minerals prove that a meteorite once hit a spot?	claude
-o21	paraphrase	Where does the metal in soda cans come from?	claude
+o20	paraphrase	Which mineral, found at an Arizona crater in 1960, convinced scientists the crater was made by a space rock?	claude
+o21	paraphrase	What is the main ore that aluminium is made from?	claude
 o22	paraphrase	What rocks are left behind when seawater dries up?	claude
 o23	mixed	Why do sculptors like working with marble?	claude
 o24	mixed	Why is quartz used in watches and electronics?	claude
