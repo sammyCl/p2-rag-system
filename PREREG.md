@@ -24,7 +24,7 @@ One sentence, about your own corpus, naming two of your systems and a direction.
 For example: "On my corpus of Kubernetes documentation, `rerank` has a higher MRR@10 than `hybrid`, because the queries are paraphrases that a first-stage fusion ranks too low."
 It should be something you could be wrong about.
 
-TODO: your hypothesis.
+For my corpus on Rocks and Minerals, I think that my rerank will have a higher nDCG@10 score than my hybrid. My corpus has a tendency to have documents reference each other or contain similar information, and I think this could interfere with the hybrid model as the bm25 may have difficulty identifying the main article, and the dense may be weaker with finding specific phrases. By having Claude rerank the predictions, I think it will be able to more accurately identify relevant articles.
 
 ---
 
@@ -36,7 +36,7 @@ A difference of 0.02 is usually not worth a reranker's cost in time and tokens.
 In this course, choose a Δ of at least 0.15 unless you argue for a larger one, because a smaller gap takes more queries than one project can judge.
 Call your number Δ (delta).
 
-TODO: your metric and your Δ, with the reason.
+I am going to use nDCG@10 as my metric and a Δ of 0.2. I want to set my Δ higher than 0.15, because I want to make sure that switching to a rerank is worth the reranker's cost in time and tokens. For a user, having a difference of 0.2 could significantly change the articles that are used, such as the correct article going from being ranked third being reranked to first or the article going from missing to being included. These changes would mean the user is more likely to get the result they were looking for.
 
 ---
 
@@ -65,7 +65,14 @@ After you score the own corpus, the minimum detectable difference that `uv run p
 It should come out at or below your Δ.
 If it does not, your queries varied more than your stage 1 sd suggested, and you will say so in the outcome.
 
-TODO: your sd, which pair it came from, your n, and the number of queries you will write (at least n).
+My sd is 0.255754, which is taken from the results/results.json for the comparison of rerank and hybrid for the nDCG@10 metric. 
+
+```n = ((1.96 + 0.84) * sd / Δ)^2```
+```n = ((1.96 + 0.84) * 0.255754 / 0.20)^2```
+```n = 12.82```
+```Rounded: n = 13```
+
+Although my calculations say only 13 queries are required, I plan to do 30 queries as that is a requirement for my gold set.
 
 ---
 
@@ -82,7 +89,7 @@ This is the default rule, and you can tighten it, but do not loosen it after you
 | around zero, with both ends inside plus or minus Δ | well-powered null: a difference as large as Δ is ruled out |
 | around zero, with an end beyond plus or minus Δ | inconclusive: the gold set could not settle it, and I say so |
 
-TODO: confirm or tighten this rule, and name the two systems and the metric once more.
+I will use this ruling. I am going to be comparing rerank minus hybrid, on nDCG@10, with Δ = 0.2.
 
 ---
 
