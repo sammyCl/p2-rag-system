@@ -2,3 +2,36 @@
 # origin is hand when you wrote the query yourself and claude when a model drafted it; at least 10 must be hand.
 # class is a word you choose, for example identifier, paraphrase or mixed as in the shared sets; scores are reported per class.
 # Lines that start with # are comments, so delete these lines or keep them, as you like.
+
+o01	identifier	What is an amethyst?	hand
+o02	identifier	What is CaSiO3?	hand
+o03	identifier	Chemical formula of topaz?	hand
+o04	paraphrase	What is a volcanic rock that is purplish-red?	hand
+o05	mixed	What are some uses of rhyolitic tuff?	hand
+o06	mixed	What is pantellerite named after?	hand
+o07	paraphrase	Why does this rock look like foam?	hand
+o08	paraphrase	What types of stone is roofing usually made out of?	hand
+o09	mixed	What are the different kinds of opals?	hand
+o10	mixed	How long have mudrocks been used in pottery?	hand
+o11	mixed	Is zircon used in jewelry?	hand
+o12	identifier	What is FeS2?	hand
+o13	paraphrase	What dark volcanic glass did ancient people use to make surgical blades?	claude
+o14	paraphrase	What kind of stone do people use to sharpen knives?	claude
+o15	paraphrase	Which soft rock is easy to carve into bowls and figures?	claude
+o16	paraphrase	Which rock should a prospector look for to find diamonds?	claude
+o17	paraphrase	Which blue stone did painters grind up to make an expensive paint?	claude
+o18	paraphrase	What rock builds up around hot springs?	claude
+o19	paraphrase	What crumbly white rock is made of the fossil shells of tiny algae?	claude
+o20	paraphrase	Which minerals prove that a meteorite once hit a spot?	claude
+o21	paraphrase	Where does the metal in soda cans come from?	claude
+o22	paraphrase	What rocks are left behind when seawater dries up?	claude
+o23	mixed	Why do sculptors like working with marble?	claude
+o24	mixed	Why is quartz used in watches and electronics?	claude
+o25	mixed	What gives smoky quartz its brown color?	claude
+o26	mixed	What causes the stripes in gneiss?	claude
+o27	mixed	How was malachite used in paint?	claude
+o28	mixed	How is kaolinite used to make porcelain?	claude
+o29	mixed	What do banded iron formations tell us about Earth's early oceans?	claude
+o30	identifier	What is Al2O3?	claude
+o31	identifier	What is TiO2?	claude
+o32	identifier	What is CaSO4·2H2O?	claude
