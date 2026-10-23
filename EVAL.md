@@ -432,6 +432,9 @@ Every trace in traces/ that records a Claude call:
 | traces/answers-rerank.jsonl | rerank | 12 | 24 | 4 | 217,674 | 4,455 | 81.8 | 18,140 | 371 | 6.8 |
 | traces/own-own-rerank.jsonl | rerank | 32 | 32 | 2 | 556,785 | 2,912 | 131.5 | 17,400 | 91 | 4.1 |
 | traces/shared-practice-rerank.jsonl | rerank | 20 | 20 | 0 | 249,517 | 1,966 | 58.2 | 12,476 | 98 | 2.9 |
+| traces/shared-practice-rerank.r1.jsonl | rerank | 20 | 20 | 0 | 270,853 | 1,820 | 64.3 | 13,543 | 91 | 3.2 |
+| traces/shared-practice-rerank.r2.jsonl | rerank | 20 | 20 | 0 | 261,705 | 1,902 | 64.3 | 13,085 | 95 | 3.2 |
+| traces/shared-practice-rerank.r3.jsonl | rerank | 20 | 20 | 0 | 279,991 | 1,820 | 66.7 | 14,000 | 91 | 3.3 |
 | traces/shared-test-rerank.jsonl | rerank | 40 | 40 | 1 | 525,239 | 4,071 | 116.0 | 13,131 | 102 | 2.9 |
 
 A span is one query of a run, one question of an answers file, or one claim of a judged file. A saved reply costs nothing now, so it counts the tokens and the seconds of the call that made it.
@@ -489,7 +492,26 @@ Write the five things here.
 Three runs of the reranker on the practice queries, and three answers files, with their run-to-run spread and Wilson intervals.
 
 <!-- p2:begin repeats -->
-_No repeated runs or answers files yet (598E: `p2 run ... --repeat 3` and `p2 answer ... --repeat 3`)._
+Repeated runs of rerank on shared/practice:
+
+| Run | Recall@10 | MRR@10 | nDCG@10 |
+| --- | ---: | ---: | ---: |
+| rerank.r1 | 0.725 | 0.800 | 0.738 |
+| rerank.r2 | 0.725 | 0.800 | 0.742 |
+| rerank.r3 | 0.725 | 0.800 | 0.738 |
+| range (max minus min) | 0.000 | 0.000 | 0.004 |
+
+| Comparison | Metric | Mean difference | 95% interval | Reading |
+| --- | --- | ---: | ---: | --- |
+| rerank.r1 minus hybrid | Recall@10 | +0.125 | [+0.042, +0.233] | rerank.r1 higher |
+| rerank.r2 minus hybrid | Recall@10 | +0.125 | [+0.042, +0.233] | rerank.r2 higher |
+| rerank.r3 minus hybrid | Recall@10 | +0.125 | [+0.042, +0.233] | rerank.r3 higher |
+| rerank.r1 minus hybrid | MRR@10 | +0.331 | [+0.163, +0.506] | rerank.r1 higher |
+| rerank.r2 minus hybrid | MRR@10 | +0.331 | [+0.163, +0.506] | rerank.r2 higher |
+| rerank.r3 minus hybrid | MRR@10 | +0.331 | [+0.163, +0.506] | rerank.r3 higher |
+| rerank.r1 minus hybrid | nDCG@10 | +0.283 | [+0.175, +0.396] | rerank.r1 higher |
+| rerank.r2 minus hybrid | nDCG@10 | +0.287 | [+0.178, +0.400] | rerank.r2 higher |
+| rerank.r3 minus hybrid | nDCG@10 | +0.283 | [+0.175, +0.396] | rerank.r3 higher |
 <!-- p2:end repeats -->
 
 Does the reranker's gain over its first stage survive the run-to-run variation?
