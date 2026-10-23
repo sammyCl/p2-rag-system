@@ -355,9 +355,17 @@ What did you change, what happened, and does the interval support the claim you 
 If the result is not distinguishable, say what size of effect your gold set could have seen.
 Read the queries at the top of each list in the second table, and say whether your change explains them.
 
-TODO:
+For my ablation, I chose to approach my dense model in a new way and switched from bge to potion. My prediction was that this switch would lower my dense model's MRR@10 value. Based on the comparison after running them:
+```
+| ablation/dense_potion minus dense | MRR@10 | +0.024 | [-0.063, +0.122] | 0.136 | not distinguishable |
+```
+It appears that the potion model performed slightly better, but not well enough to be considered a stronger model. My gold set is only reliably detecting a difference between the two models when there is an MRR@10 gap of 0.136 or higher. My gap was 0.024 is too small for the test to tell them apart. Therefore, my hypothesis is inconclusive. I also believe that if I used more queries, a distinctive difference may become clear.
 
+The switch from bge to potion for the dense model improved the results of 4 queries, hurt the results of 5 queries, and left 23 queries unchanged. The top changes are as follows:
 
+o18, o05, o07, and o15 all improved. After reviewing what those queries were I realized that they tended to be questions where I struggled with determining the relevant documents. I had to make several hard decisions when classifying relevant documents because some documents were adjacent to answering the questions, but missed some of the key information that I was looking for. I think that the bge dense model likely included documents I ultimately deemed to be irrelevant because it took more context into account, while I chose not to include them.
+
+o17, o31, o22, o04, and o30 all regressed. After reviewing those questions, it looks like they were all identifier or paraphrase questions. This makes me think that potion struggled more with them because it did not reference the context for the keywords or struggled to identify the correct keywords.
 
 ---
 
