@@ -26,7 +26,11 @@ Commit this answer before your first `uv run p2 score` on the own corpus.
 Git history then shows that the expectation came first, which is what lets it be wrong in a way that teaches you something.
 If you were surprised later, say so in prompt 4 or in EVAL.md; do not come back and rewrite this one.
 
-TODO: your answer to prompt 1.
+I did not realize that I had to answer this prompt before running my score, I thought I only had to do PREREG first, so I have already seen my score. I apologize for doing these in the wrong order.
+
+I can say that I expected rerank to perform best since it performed the best in lab 13 and against the shared corpus. This is reflected in my hypothesis for prereg as well, because I predicted that the rerank would perform better than the hybrid. I expected dense or bm25 to perform the worst because they focus on either keywords or applying context, not both. I leaned towards bm25 performing worse because it performs the best on identifier questions, and I knew those would make up a much smaller portion of the queries.
+
+In terms of my corpus, I chose to do one on Rocks and Minerals. I have an interest in geophysics and geology, and actually minored in geophysical engineering here at Mines. As a result, I knew that I wanted to do something in this realm. I chose to have my corpus about rocks and minerals because I knew that it would be straightforward to get to the necessary document and token requirement. 
 
 ---
 
