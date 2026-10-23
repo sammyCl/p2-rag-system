@@ -191,6 +191,7 @@ Scores per system on your gold set.
 | dense | 0.802 | 0.731 | 0.730 |
 | hybrid | 0.953 | 0.862 | 0.869 |
 | rerank | 0.992 | 1.000 | 0.985 |
+| ablation/dense_potion | 0.812 | 0.755 | 0.751 |
 
 32 judged queries; nDCG uses binary labels; a random ranking of the 260 documents would get recall@10 near 0.038.
 <!-- p2:end own -->
@@ -212,6 +213,9 @@ The same scores per query class.
 | rerank | Recall@10 | 1.000 | 0.981 | 1.000 |
 | rerank | MRR@10 | 1.000 | 1.000 | 1.000 |
 | rerank | nDCG@10 | 1.000 | 0.962 | 1.000 |
+| ablation/dense_potion | Recall@10 | 0.714 | 0.731 | 0.958 |
+| ablation/dense_potion | MRR@10 | 0.643 | 0.590 | 1.000 |
+| ablation/dense_potion | nDCG@10 | 0.662 | 0.599 | 0.968 |
 <!-- p2:end own-classes -->
 
 The same scores for the queries you wrote yourself (`hand`) and the ones a model drafted (`claude`), with the difference between the two groups and its interval.
@@ -232,6 +236,9 @@ Once both groups have queries, the table also says whether `bm25`'s lead over `d
 | rerank | Recall@10 | 0.979 | 1.000 | -0.021 | [-0.062, +0.000] | not distinguishable |
 | rerank | MRR@10 | 1.000 | 1.000 | +0.000 | [+0.000, +0.000] | not distinguishable |
 | rerank | nDCG@10 | 0.979 | 0.988 | -0.009 | [-0.058, +0.024] | not distinguishable |
+| ablation/dense_potion | Recall@10 | 0.875 | 0.775 | +0.100 | [-0.150, +0.342] | not distinguishable |
+| ablation/dense_potion | MRR@10 | 0.875 | 0.683 | +0.192 | [-0.058, +0.433] | not distinguishable |
+| ablation/dense_potion | nDCG@10 | 0.847 | 0.693 | +0.153 | [-0.093, +0.390] | not distinguishable |
 
 The hand and claude queries are different queries, so the interval of hand minus claude comes from resampling the queries within each group (10,000 times), not from pairing them.
 
@@ -271,6 +278,18 @@ Differences between every pair of systems.
 | rerank minus hybrid | Recall@10 | +0.039 | [+0.000, +0.109] | 0.090 | not distinguishable |
 | rerank minus hybrid | MRR@10 | +0.138 | [+0.042, +0.249] | 0.150 | rerank higher |
 | rerank minus hybrid | nDCG@10 | +0.115 | [+0.035, +0.212] | 0.127 | rerank higher |
+| ablation/dense_potion minus bm25 | Recall@10 | -0.117 | [-0.258, +0.016] | 0.196 | not distinguishable |
+| ablation/dense_potion minus bm25 | MRR@10 | -0.120 | [-0.234, -0.016] | 0.159 | bm25 higher |
+| ablation/dense_potion minus bm25 | nDCG@10 | -0.117 | [-0.233, -0.012] | 0.161 | bm25 higher |
+| ablation/dense_potion minus dense | Recall@10 | +0.010 | [-0.125, +0.141] | 0.191 | not distinguishable |
+| ablation/dense_potion minus dense | MRR@10 | +0.024 | [-0.063, +0.122] | 0.136 | not distinguishable |
+| ablation/dense_potion minus dense | nDCG@10 | +0.021 | [-0.070, +0.122] | 0.140 | not distinguishable |
+| ablation/dense_potion minus hybrid | Recall@10 | -0.141 | [-0.266, -0.031] | 0.169 | hybrid higher |
+| ablation/dense_potion minus hybrid | MRR@10 | -0.107 | [-0.204, -0.025] | 0.131 | hybrid higher |
+| ablation/dense_potion minus hybrid | nDCG@10 | -0.118 | [-0.217, -0.035] | 0.132 | hybrid higher |
+| ablation/dense_potion minus rerank | Recall@10 | -0.180 | [-0.312, -0.062] | 0.184 | rerank higher |
+| ablation/dense_potion minus rerank | MRR@10 | -0.245 | [-0.380, -0.115] | 0.193 | rerank higher |
+| ablation/dense_potion minus rerank | nDCG@10 | -0.234 | [-0.364, -0.113] | 0.184 | rerank higher |
 
 The interval is a paired bootstrap (10,000 resamples of the queries); MDD is the smallest difference this many queries detect 80% of the time.
 <!-- p2:end own-pairs -->
@@ -293,14 +312,43 @@ Hypothesis: I switched from bge to potion for my ablation's dense model. I belie
 The run file for it lives in `runs/own/ablation/`.
 
 <!-- p2:begin own-ablation -->
-_No ablation runs yet: `uv run p2 run --corpus own --system NAME --ablation` writes one to runs/own/ablation/, then `uv run p2 score` fills this table._
+| Comparison | Metric | Mean difference | 95% interval | MDD | Reading |
+| --- | --- | ---: | ---: | ---: | --- |
+| ablation/dense_potion minus bm25 | Recall@10 | -0.117 | [-0.258, +0.016] | 0.196 | not distinguishable |
+| ablation/dense_potion minus bm25 | MRR@10 | -0.120 | [-0.234, -0.016] | 0.159 | bm25 higher |
+| ablation/dense_potion minus bm25 | nDCG@10 | -0.117 | [-0.233, -0.012] | 0.161 | bm25 higher |
+| ablation/dense_potion minus dense | Recall@10 | +0.010 | [-0.125, +0.141] | 0.191 | not distinguishable |
+| ablation/dense_potion minus dense | MRR@10 | +0.024 | [-0.063, +0.122] | 0.136 | not distinguishable |
+| ablation/dense_potion minus dense | nDCG@10 | +0.021 | [-0.070, +0.122] | 0.140 | not distinguishable |
+| ablation/dense_potion minus hybrid | Recall@10 | -0.141 | [-0.266, -0.031] | 0.169 | hybrid higher |
+| ablation/dense_potion minus hybrid | MRR@10 | -0.107 | [-0.204, -0.025] | 0.131 | hybrid higher |
+| ablation/dense_potion minus hybrid | nDCG@10 | -0.118 | [-0.217, -0.035] | 0.132 | hybrid higher |
+| ablation/dense_potion minus rerank | Recall@10 | -0.180 | [-0.312, -0.062] | 0.184 | rerank higher |
+| ablation/dense_potion minus rerank | MRR@10 | -0.245 | [-0.380, -0.115] | 0.193 | rerank higher |
+| ablation/dense_potion minus rerank | nDCG@10 | -0.234 | [-0.364, -0.113] | 0.184 | rerank higher |
+
+The interval is a paired bootstrap (10,000 resamples of the queries); MDD is the smallest difference this many queries detect 80% of the time.
 <!-- p2:end own-ablation -->
 
 The queries your ablation helped and hurt, against the system it varies, by reciprocal rank.
 `p2 score` finds that system from a line such as `BASE = "bm25"` in your variant's file, or else from its name: `bm25_lab` varies `bm25`.
 
 <!-- p2:begin own-ablation-queries -->
-_No ablation runs yet: `uv run p2 run --corpus own --system NAME --ablation` writes one to runs/own/ablation/, then `uv run p2 score` fills this table._
+ablation/dense_potion against dense (BASE = "dense" in p2/retrievers/dense_potion.py): it helped 4 queries, hurt 5 and left 23 unchanged.
+
+| Query | Class | Origin | dense RR | ablation/dense_potion RR | Change | Effect |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| o18 | paraphrase | claude | 0.000 | 1.000 | +1.000 | helped |
+| o05 | mixed | hand | 0.500 | 1.000 | +0.500 | helped |
+| o07 | paraphrase | hand | 0.000 | 0.500 | +0.500 | helped |
+| o15 | paraphrase | claude | 0.167 | 0.500 | +0.333 | helped |
+| o17 | paraphrase | claude | 1.000 | 0.333 | -0.667 | hurt |
+| o31 | identifier | claude | 1.000 | 0.500 | -0.500 | hurt |
+| o22 | paraphrase | claude | 0.500 | 0.333 | -0.167 | hurt |
+| o04 | paraphrase | hand | 0.125 | 0.000 | -0.125 | hurt |
+| o30 | identifier | claude | 0.100 | 0.000 | -0.100 | hurt |
+
+RR is the reciprocal rank of the first relevant document in the top 10 (0 when none is there), the per-query value behind MRR@10; the queries at the top of each list are the ones to read.
 <!-- p2:end own-ablation-queries -->
 
 What did you change, what happened, and does the interval support the claim you want to make?
@@ -397,6 +445,7 @@ Systems that do not call Claude, from traces/retrieval/ on the machine that last
 
 | Trace | System | Queries | Seconds | Milliseconds per query |
 | --- | --- | ---: | ---: | ---: |
+| traces/retrieval/own-own-ablation-dense_potion.jsonl | dense_potion | 32 | 0.04 | 1.2 |
 | traces/retrieval/own-own-bm25.jsonl | bm25 | 32 | 0.02 | 0.8 |
 | traces/retrieval/own-own-dense.jsonl | dense | 32 | 0.25 | 7.7 |
 | traces/retrieval/own-own-hybrid.jsonl | hybrid | 32 | 0.28 | 8.9 |
