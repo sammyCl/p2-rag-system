@@ -287,6 +287,9 @@ TODO: write what your own-corpus intervals let you claim.
 
 Change one thing and keep everything else the same.
 Write your hypothesis here before you run it, in one sentence with a direction: "I expect X to raise MRR@10 on my corpus because Y."
+
+Hypothesis: I switched from bge to potion for my ablation's dense model. I believe that this will lower my MRR@10 because the model will no longer take the context of different words into consideration.
+
 The run file for it lives in `runs/own/ablation/`.
 
 <!-- p2:begin own-ablation -->
@@ -304,7 +307,9 @@ What did you change, what happened, and does the interval support the claim you 
 If the result is not distinguishable, say what size of effect your gold set could have seen.
 Read the queries at the top of each list in the second table, and say whether your change explains them.
 
-TODO: write the ablation: the one change, the hypothesis, the result and the claim.
+TODO:
+
+
 
 ---
 
