@@ -298,7 +298,29 @@ Which differences are distinguishable and which are not, at your gold-set size?
 Do the `hand` queries and the `claude` queries tell the same story?
 Did your prediction in `DECISIONS.md` prompt 1 hold?
 
-TODO: write what your own-corpus intervals let you claim.
+Distinguishable:
+- dense minus bm25 -> MRR@10 and nDCG@10 bm25 higher
+- hybrid minus dense -> Recall, MRR@10, and nDCG@10 hybrid higher
+- rerank minus bm25 -> MRR@10 and nDCG@10 rerank higher
+- rerank minus dense -> Recall, MRR@10, and nDCG@10 rerank higher
+- rerank minus hybrid -> MRR@10 and nDCG@10 rerank higher
+- dense (potion) minus bm25 -> MRR@10 and nDCG@10 bm25 higher
+- hybrid minus dense (potion) -> Recall, MRR@10, and nDCG@10 hybrid higher
+- rerank minus dense (potion) -> Recall, MRR@10, and nDCG@10 rerank higher
+
+Not distinguishable:
+- dense minus bm25 -> Recall
+- hybrid minus bm25 -> Recall, MRR@10, and nDCG@10
+- rerank minus bm25 -> Recall
+- rerank minus hybrid -> Recall
+- dense (potion) minus bm25 -> Recall
+- dense (potion) minus dense -> Recall, MRR@10, and nDCG@10
+
+Overall, these metrics show that my rerank model was my strongest model. This makes sense based on what I saw during Lab 13 and with the scores from the shared corpus. 
+
+My own origins table demonstrates that there is not a distinguishable difference between the handwritten queries and the Claude queries, with the exception of bm25. The handwritten queries tended to score better with the bm25, because I had more keywords that I was looking for with them. Claude's queries had fewer keywords, so I believe bm25 had a more difficult time identifying them.
+
+Based on the metrics observed, I can say that my predictions in `DECISIONS.md` for question 1 were partially correct. My rerank system was my strongest system, when compared to the other systems it had stronger scores with the only not distinguishable score being Recall for bm25 and hybrid. What surprised me was that my dense system was my weakest model. With more thought, I realized that this was most likely due to my relevance rule. In my approach to finding relevant documents, I relied a lot on the keywords in the documents, this meant that despite there being fewer identifier queries than paraphrase or mixed, my paraphrase and mixed still relied heavily on keywords. As a result, my bm25 still had an advantage over my dense, as the bm25 was looking for those specific keywords.
 
 ---
 
@@ -481,7 +503,7 @@ _No stretch runs yet (stretch option 5): `uv run p2 run --corpus own --queries e
 
 ### Your stretch
 
-Write the five things here.
+Rider.
 
 ---
 
