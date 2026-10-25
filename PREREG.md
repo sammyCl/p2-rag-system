@@ -100,7 +100,17 @@ Which row of the table in section 4 is it?
 Did your gold set reach the size section 3 asked for, and what was the minimum detectable difference that `uv run p2 score` printed?
 What would you do next, and what would you want a reader to take from this?
 
-TODO: your outcome.
+When comparing rerank and hybrid for the nDCG@10 metric, the final interval was [+0.035, +0.212], with a mean difference of +0.115, and a MDD of 0.127. This means that my result was in the following row of the table in Section 4:
+```
+| entirely above zero in the direction I predicted | supported: the difference is distinguishable from zero |
+```
+As a result, my claim is supported, but not 100% correct. The interval was entirely above zero in the direction I predicted, however I also stated that we would see a Δ of 0.2 for the nDCG@10 metric when comparing rerank and hybrid to justify using the rerank system. Since the interval was [+0.035, +0.212], the interval shows that the difference between hybrid and rerank is not consistent enough to justify the extra time and tokens that using Claude to rerank the relevant documents costs for my current gold-set.  
+
+I reached an MDD of 0.127, since my Δ was 0.2, this means that my gold-set was large enough to identify the difference of Δ that I wanted. This is backed up by the math I did in Section 3 that showed 13 queries would be enough to show the difference, and my gold-set was 32 queries.
+
+The two main changes I would make to my setup are both with my gold-set. After reviewing the metrics for my gold-set, specifically for the rerank system, I feel that my gold-set was too weak, as most of my systems scored unusually high for my corpus. I believe the main reason for this is that my queries were not broad enough and tended to focus on one topic or document. I also think that my relevance rule was too strict, as it reduced the number of relevant documents down to 1 for most of my queries. My next steps would be to write a new gold-set that had broader queries and multiple relevant documents. I also think I would write more queries to try and detect more differences between the different systems.
+
+My current gold-set shows that my rerank system performed better than my hybrid system. This would likely translate to harder queries as well, because the rerank system would be able to rerank and identify documents that the hybrid system did not prioritize. As a result, I am inclined to say that with a stronger gold-set, my rerank system would likely have a more obvious difference when compared to the hybrid system.
 
 ---
 

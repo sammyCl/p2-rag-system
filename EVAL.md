@@ -298,6 +298,8 @@ Which differences are distinguishable and which are not, at your gold-set size?
 Do the `hand` queries and the `claude` queries tell the same story?
 Did your prediction in `DECISIONS.md` prompt 1 hold?
 
+At my gold-set size, the following metrics were distinguishable and not distinguishable:
+
 Distinguishable:
 - dense minus bm25 -> MRR@10 and nDCG@10 bm25 higher
 - hybrid minus dense -> Recall, MRR@10, and nDCG@10 hybrid higher
