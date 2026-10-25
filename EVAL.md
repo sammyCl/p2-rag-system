@@ -555,7 +555,9 @@ Each repeat answers the same questions, so the repeats are not independent trial
 Does the reranker's gain over its first stage survive the run-to-run variation?
 Write what the spread is, how it compares with the gain, and what the Wilson intervals on the verified share and the declined share say about 8 and 4 questions.
 
-598E: write the repeats result here.
+598E: The reranker's gain over the first stage does survive the run-to-run variation. As observed in the table that compares the different reranker runs to the hybrid run, the reranker is consistently scoring +0.125 in Recall over hybrid, +0.331 in MRR@10 over hybrid, and between +0.283 and +0.287 in nDCG@10 over hybrid. This means there is no spread for Recall and MRR@10, and that nDCG@10 only has a spread of 0.004. Since the improvement of rerank over hybrid is significantly larger than the spread of the metrics, it can be concluded that the reranker consistently scores higher than the hybrid system.
+
+The Wilson intervals demonstrate that the reranker correctly decided a question could be answered and identified quotes for the 8 questions that could be answered by the shared corpus, and declined to answer the 4 questions that could not be answered by the shared corpus. For the 8 verified questions, the interval was [0.676, 1.000], which demonstrates that Claude has a true rate of at least 67.6%. For the 4 declined questions, the interval was [0.510, 1.000], which indicates that true rate may be as low as 51%.
 
 ### The pre-registered claim
 
@@ -563,4 +565,8 @@ The claim, the smallest effect, the gold-set size and the test are in `PREREG.md
 Here, say whether you followed the plan, what the interval turned out to be, and what that means.
 The outcome section of `PREREG.md` holds the short version.
 
-598E: write the claim and its outcome here.
+598E: My claim was that the rerank system would have a higher nDCG@10 score than the hybrid system, and would require a Δ of 0.2 to show the rerank system was worth the extra cost of time and tokens. 
+
+Based on the score against my own corpus, I was able to confirm that the rerank system had a higher nDCG@10 score, as the final interval was [+0.035, +0.212], with a mean difference of +0.115, and a MDD of 0.127. This demonstrates that the rerank system did perform better than the hybrid system in terms of the nDCG@10 score, however it did not consistently perform better by 0.2. As a result, the extra costs of the rerank were not consistently justified by the score I got.
+
+Overall, I followed the plan I outlined in the `PREREG.md`. The only difference I made was that I had 32 queries instead of 30 queries. 
