@@ -118,3 +118,5 @@ My current gold-set shows that my rerank system performed better than my hybrid 
 
 Dated entries only, one per change, each saying what changed and why.
 Leave this section as it is if nothing changed.
+
+10/21/26 - I ended up doing 32 queries instead of 30 queries for my gold-set. I wrote 12 queries and then had Claude write 20, that way I could remove 2 queries if I did not feel like they were written well enough. I ended up keeping all of the queries.

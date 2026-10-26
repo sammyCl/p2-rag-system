@@ -389,7 +389,7 @@ The switch from bge to potion for the dense model improved the results of 4 quer
 
 o18, o05, o07, and o15 all improved. After reviewing what those queries were I realized that they tended to be questions where I struggled with determining the relevant documents. I had to make several hard decisions when classifying relevant documents because some documents were adjacent to answering the questions, but missed some of the key information that I was looking for. I think that the bge dense model likely included documents I ultimately deemed to be irrelevant because it took more context into account, while I chose not to include them.
 
-o17, o31, o22, o04, and o30 all regressed. After reviewing those questions, it looks like they were all identifier or paraphrase questions. This makes me think that potion struggled more with them because it did not reference the context for the keywords or struggled to identify the correct keywords.
+o17, o31, o22, o04, and o30 all regressed. After reviewing those questions, it looks like they were all identifier or paraphrase questions. The main difference between these paraphrase questions and the questions that were helped by potion is that these questions contained keywords that needed to be in a specific context to be relevant. This makes me think that potion struggled more with them because it found the keywords but struggled to identify the correct context. For the identifier questions, I think the main issue was that potion identified the keywords (the chemical formulas), but these formulas showed up across many different documents. Without looking at the context, potion likely misidentified some documents that did not have the element as a focus.
 
 ---
 
@@ -606,7 +606,7 @@ Write what the spread is, how it compares with the gain, and what the Wilson int
 
 598E: The reranker's gain over the first stage does survive the run-to-run variation. As observed in the table that compares the different reranker runs to the hybrid run, the reranker is consistently scoring +0.125 in Recall over hybrid, +0.331 in MRR@10 over hybrid, and between +0.283 and +0.287 in nDCG@10 over hybrid. This means there is no spread for Recall and MRR@10, and that nDCG@10 only has a spread of 0.004. Since the improvement of rerank over hybrid is significantly larger than the spread of the metrics, it can be concluded that the reranker consistently scores higher than the hybrid system.
 
-The Wilson intervals demonstrate that the reranker correctly decided a question could be answered and identified quotes for the 8 questions that could be answered by the shared corpus, and declined to answer the 4 questions that could not be answered by the shared corpus. For the 8 verified questions, the interval was [0.676, 1.000], which demonstrates that Claude has a true rate of at least 67.6%. For the 4 declined questions, the interval was [0.510, 1.000], which indicates that true rate may be as low as 51%.
+The Wilson intervals demonstrate that the reranker correctly decided a question could be answered and identified quotes for the 8 questions that could be answered by the shared corpus, and declined to answer the 4 questions that could not be answered by the shared corpus. For the 8 verified questions, the interval was [0.676, 1.000], which demonstrates that Claude has a true rate of 67.6%-100%. For the 4 declined questions, the interval was [0.510, 1.000], which indicates that the true rate is between 51% and 100%.
 
 ### The pre-registered claim
 
