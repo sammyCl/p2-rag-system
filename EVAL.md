@@ -399,10 +399,21 @@ Pick the queries where your best system on your own corpus failed: the relevant 
 Take at least five, and read what the system returned next to what was relevant.
 Then sort the failures by cause, for example a vocabulary mismatch, near-duplicate documents, a chunk that cut the answer in half, a query that is ambiguous, or a label that was wrong, because sometimes the gold set is what failed.
 
+Since my reranker performed exceedingly well against my corpus (due to my gold-set containing weak queries), I am looking at 3 queries that my reranker got incorrect and 4 queries that my hybrid system got incorrect.
+
 | qid | what the best system returned | what was relevant | cause | what you would try |
 |---|---|---|---|---|
+| o07 | hybrid: sandstone, marble, mudrock (top 3); pumice at 4 | pumice | The query for this question was ambiguous, as it says, "Why does this rock...". | I could make the query less vague or add more keywords for the system to search for. Additionally, improving the dense system would help it find these more ambiguous answers. |
+| o08 | rerank: slate, mudrock, chlorite_group (top 3); quartzite at 10, phonolite not in the top 10 | slate, mudrock, quartzite, phonolite | Both quartzite and phonolite have explicit mentions of being used as roofing tiles, it is possible that they were missed because "roofing tiles" was not considered to be the same as roofing by the hybrid model, and as a result were left out or lower on the list when the reranker performed its reranking. | I could try rewording the query to be "roofing or roofing tiles" so there would not be a vocabulary mismatch, or work to improve the dense system. |
+| o15 | rerank: soapstone, gypsum, onyx (top 3); marble at 5 | soapstone, marble | After reviewing the document for gypsum, I have concluded that it should have been considered a relevant document, as it states, "As alabaster, a material for sculpture, it was used especially in the ancient world before steel was developed, when its relative softness made it much easier to carve.". I disagree with the relevance of onyx because although it was used for carving, the article does not describe it as being a soft rock. | To fix the gypsum issue, I would go back and mark it as a relevant document. For the onyx issue, I think this is a keyword issue, where my reranker relied too much on the keywords and not enough on the context. |
+| o16 | rerank: kimberlite, peridotite, diamond (top 3); lamproite at 4 | diamond, kimberlite, lamproite | After reviewing the peridotite document, I have concluded that peridotite should have been considered a relevant document, as it has the quote: "Kimberlite is a highly brecciated variant of peridotite formed in volcanic pipes and is known for being the host rock to diamonds". | To fix this issue, I would go back and add peridotite as a relevant document. |
+| o19 | hybrid: opal, chalk, limestone (top 3); diatomaceous_earth at 7 | diatomaceous_earth | Opal, chalk, and limestone had similar phrasings, with opal even referencing diatomaceous earth, but none of them were marked as a relevant document because they either tangentially mentioned diatomaceous earth, or discussed something similar without answering the question. | I think allowing tangential mentions of a document would assist with identifying correct documents. |
+| o20 | hybrid: pegmatite, enstatite, basalt (top 3); coesite not in the top 10 | coesite | I think this is likely a vocabulary mismatch, combined with the dense system having issues identifying key terms. | I think adding more keywords to the query would help to find it better in the future. Additionally, improving the dense system would help it find these more ambiguous answers. |
+| o22 | hybrid: dolomite_-rock, limestone, chert (top 3); evaporite at 5 | evaporite | Dolomite rock, limestone, and chert all had phrasings that were similar to the question being asked, but did not fit as exactly as I was requiring given my relevance rule. | I think making my relevance rule a little less harsh would help with this question. I went back and forth for a while on this question trying to figure out the relevant documents, and loosening the rule a bit would have helped a lot. |
 
-TODO: add one row for each failure you analyzed, and write two or three sentences on the pattern you see across them.
+The three main patterns I saw in what was missed was due to harsh relevance rules, the dense model burying results, and missing relevant documents. To fix these issues, I can work to improve my dense model's ability to recognize relevant documents, such as using a larger model or using smaller word chunks. This would help the hybrid model to correctly identify relevant documents, and in turn improve the reranker's ability to identify relevant documents. The second area I could improve is what I consider to be a relevant document. My relevance rule was pretty harsh when I was choosing relevant documents, which lead to some documents that contain the answer not to be considered because they were either passing mentions, or not the focus of the document. Additionally, there are some relevant documents that I missed during my initial pass, like peridotite for o16.  
+
+I would be able to assess how well my changes performed by running my systems against the gold-set again, and observing if relevant documents that were previously missed or ranked lower moved up higher.
 
 ---
 
@@ -415,7 +426,45 @@ Did the winner change between the shared corpus and yours?
 Why, or why not: what is different about the two collections (document length, vocabulary, identifiers, near-duplicates, how the queries were written), and which of your explanations did you test and which are guesses?
 Say what 20 queries on one side and your gold-set size on the other cannot support.
 
-TODO: write the cross-corpus comparison.
+Copied Tables:
+Own Corpus:
+| System | Recall@10 | MRR@10 | nDCG@10 |
+| --- | ---: | ---: | ---: |
+| bm25 | 0.930 | 0.875 | 0.868 |
+| dense | 0.802 | 0.731 | 0.730 |
+| hybrid | 0.953 | 0.862 | 0.869 |
+| rerank | 0.992 | 1.000 | 0.985 |
+| ablation/dense_potion | 0.812 | 0.755 | 0.751 |
+
+Shared Corpus:
+| System | Recall@10 | MRR@10 | nDCG@10 |
+| --- | ---: | ---: | ---: |
+| bm25 | 0.625 | 0.507 | 0.518 |
+| dense | 0.588 | 0.534 | 0.493 |
+| hybrid | 0.600 | 0.469 | 0.455 |
+| rerank | 0.725 | 0.800 | 0.742 |
+
+The winner for both my own corpus and my shared corpus was the rerank system, based on the MRR@10 and nDCG@10 metrics. However, the order of the other three systems did change, in the shared corpus the order was:
+
+rerank > bm25 & dense & hybrid
+
+While the order for my own corpus was:
+
+rerank > bm25 & hybrid > dense
+
+I think this change is primarily tied to my relevance rule and how I prioritized keywords in my queries. Since I was very specific about how a document was considered to be relevant, the keywords in my queries and in the documents allowed bm25 to perform a lot better on my corpus compared to the shared corpus. Claude ran a test to see how well keywords overlapped the relevant documents in both corpora and came back with 0.53 overall for the shared corpus and 0.86 for my corpus. This supports my claim that the reordering of the systems is potentially due to keyword usage.
+
+Content-word overlap by query class:
+| Query class | Shared (n) | Own (n) |
+| --- | ---: | ---: |
+| identifier | 0.95 (7) | 1.00 (7) |
+| paraphrase | 0.11 (7) | 0.83 (13) |
+| mixed | 0.51 (6) | 0.80 (12) |
+| all | 0.53 (20) | 0.86 (32) |
+
+Another factor that may be contributing to this change is the length of each document. In the shared corpus, the median document length was ~68 words, while the median document length was ~756 words for my corpus. Since the dense system functions by separating the document into chunks of 300 words, this means the dense system may struggle more on my corpus because it only sees sections of the document, while it will be able to look through the entire document for the shared corpus. This is a guess, so I am not sure how much it may be contributing to the difference.
+
+With only 20 queries in the shared corpus, the MDD is between 0.143 and 0.415 depending on the compared systems and metric. Similarly, my corpus has an MDD between 0.090 and 0.234. For each of these corpora, a difference that is smaller than the MDD will likely not be detected or supported. Additionally, the reliability and support of the gold-sets is only as reliable as the gold-sets themselves. For example, my gold-set makes the performance of the systems seem really strong, especially the rerank system with a 1.00 MRR@10. However, these scores are also unrealistic, and demonstrate that my gold-set is weak. It relies too much on keywords, and my relevant document rule was too harsh, as a result I tended to only have 1 relevant document for each query.  
 
 ---
 

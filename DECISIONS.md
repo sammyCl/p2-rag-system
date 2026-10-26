@@ -45,7 +45,9 @@ If you rejected the alternative without measuring it, say why that was a fair ca
 "There was no alternative" is not an answer.
 Find the fork.
 
-TODO: your answer to prompt 2.
+There were a couple forks in the road that I encountered, one was what embedding model I chose. I chose to use the bge embedding model, because during Lab 12 it performed better than the potion model, since it took into account the context of the document. This choice did cost time, as the bge model takes longer to run since it takes more context into account.
+
+Additionally, my choice of corpus put me down a specific path. My choice of a gems and minerals corpus has resulted in my documents having a decent amount of overlap, as different rocks and minerals reference each other, and have similar methods of formation, uses, etc. While I stand by my choice, since it helps to answer questions I am interested in, there are costs that come with having such overlap, such as systems misidentifying documents.
 
 ---
 
@@ -61,7 +63,9 @@ What did you do instead?
 If it genuinely never happened, say so plainly, and then say what you would have had to check in order to notice.
 Being honest here costs you far less than a story you cannot defend when you record your video.
 
-TODO: your answer to prompt 3.
+The main area where I overruled the agent was when I was identifying relevant documents. I would classify the documents, and then use Claude to make sure I was applying my rules consistently. This helped to identify areas where I was lacking, but also helped me to strengthen my relevance rule and confidently categorize the different documents, as there were many suggestions that I disagreed with. Claude would bring up documents that seemed to fit the query, and I was able to explain why I disagreed regarding its relevance. This was how I was able to establish my strong relevance rule.
+
+For example, when I was figuring out the relevant documents for o29, Claude repeatedly suggested including a document that discussed how a mineral helped to understand the atmosphere in the past, despite the query being about what banded iron formations tell us about Earth's early oceans. Each time, I would disagree and point out that the question was specifically asking about how banded iron formations related to information about Earth's early oceans, not the atmosphere. I would also make sure I did not add it to the relevant documents for the query.
 
 ---
 
@@ -73,7 +77,19 @@ It could be a mean over a small query class, a difference whose interval include
 What would have to be true for you to trust it?
 Did you do anything to test it, and what did that show?
 
-TODO: your answer to prompt 4.
+I do not trust the score metrics for my reranker on my corpus, as they are above 95%. This would mean that my reranker would have to be nearly perfect, which does not make sense given its performance on the shared corpus. Since my other systems improved dramatically on my corpus compared to the shared corpus, I believe that my scores appear higher than they should because my gold-set is weak. My queries had significantly more keywords included in them than the shared gold-set did, and my relevance rule was strict enough that I only had one relevant document for each. This combination likely made it straightforward for my systems to identify the documents, as they could primarily rely on keywords.
+
+The main test I did was looking at how much the shared gold-set focused on keywords compared to my gold-set, and I saw the following:
+
+Content-word overlap by query class:
+| Query class | Shared (n) | Own (n) |
+| --- | ---: | ---: |
+| identifier | 0.95 (7) | 1.00 (7) |
+| paraphrase | 0.11 (7) | 0.83 (13) |
+| mixed | 0.51 (6) | 0.80 (12) |
+| all | 0.53 (20) | 0.86 (32) |
+
+This demonstrated to me that my queries were likely too keyword-reliant. 
 
 ---
 
@@ -84,4 +100,6 @@ One thing in your system, your corpus or your gold set that is not right, not fi
 What would you do next, and how would you find out whether it matters?
 Name the file, the query or the document where someone could look.
 
-TODO: your answer to prompt 5.
+I want to improve my gold-set. I would like to go back through and make more difficult queries that have fewer keywords, are more vague, and have multiple relevant documents attached to them. The queries will also be broader so I can justify having multiple relevant documents for each query. I will also want to make my relevance rule a little more forgiving so I can include relevant documents that contain the answer to a query, but may not have the answer as their focus or most important detail.
+
+To check whether my gold-set has improved, I would want to run my systems against my corpus and updated gold-set. If my scores are more similar to the ones of the shared corpus, I can safely say that my gold-set improved. If my scores remain about the same, it is possible that my corpus is easier for the systems to utilize than the shared corpus. Either way, I will be able to conclude whether my oddly high metrics are due to a weak gold-set, or a compatible corpus.
