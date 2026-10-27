@@ -618,4 +618,4 @@ The outcome section of `PREREG.md` holds the short version.
 
 Based on the score against my own corpus, I was able to confirm that the rerank system had a higher nDCG@10 score, as the final interval was [+0.035, +0.212], with a mean difference of +0.115, and a MDD of 0.127. This demonstrates that the rerank system did perform better than the hybrid system in terms of the nDCG@10 score, however it did not consistently perform better by 0.2. As a result, the extra costs of the rerank were not consistently justified by the score I got.
 
-Overall, I followed the plan I outlined in the `PREREG.md`. The only difference I made was that I had 32 queries instead of 30 queries. 
+Overall, I followed the plan I outlined in the `PREREG.md`. The only difference I made was that I had 32 queries instead of 30 queries. I only did 32 because I thought I may end up deleting queries if I did not think they were written well, but I ended up keeping all of the queries. 
